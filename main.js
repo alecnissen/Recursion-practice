@@ -74,3 +74,191 @@
 // #4 
 
 
+// Write a function called all which accepts an array and a callback and returns true if every value 
+
+// in the array returns true when passed as parameter to the callback function
+
+// Sample:
+
+// var allAreLessThanSeven = all([1,2,9], function(num){
+// 	return num < 7;
+// });
+
+// // console.log(allAreLessThanSeven); // false
+
+// // loop through the arr 
+// // 
+
+// console.log(allAreLessThanSeven); // false
+
+// function all(array, callback) {
+// 	var copy = copy || array.slice(); // shallow copies array
+
+// 	if(copy.length === 0) return true;
+
+// 	if(callback(copy[0])){
+// 		copy.shift(); // remove first element from array
+// 		return all(copy, callback);
+// 	} else {
+// 		return false;
+// 	}
+// } 
+
+
+
+
+// #5 
+
+// #2 
+// review power function, might be good to start there, 
+
+//  function power(base, exponent) {
+// 	if(exponent == 0) return 1;
+// 	return base * power(base, exponent - 1);
+// }  
+
+// console.log(power(2, 4)); 
+
+// #6 
+
+// Write a function called productOfArray 
+// which takes in an array of numbers and returns the product of them all
+
+// Sample:
+
+// var six = productOfArray([1,2,3]) // 6
+// var sixty = productOfArray([1,2,3,10]) // 60 
+
+// takes in arr of numbers, sums them all to return a total product, 
+
+// init product var 
+
+// loop thru numbers, multiple the current and add onto the product variable, 
+
+// var six = productOfArray([1,2,3]) // 6
+// var sixty = productOfArray([1,2,3,10]) // 60
+
+
+// function productOfArray(array) {
+// 	if(array.length === 0) return 1;
+
+// 	return array.shift() * productOfArray(array);
+// } 
+
+// console.log(six, sixty); 
+
+// #6 
+
+// Write a function called contains that searches for a value in a nested object. It returns true if the object contains that value.
+
+// Sample:
+
+var nestedObject = {
+    data: {
+        info: {
+            stuff: {
+                thing: {
+                    moreStuff: {
+                        magicNumber: 44,
+                        something: 'foo2'
+                    }
+                }
+            }
+        }
+    }
+}
+
+// let hasIt = contains(nestedObject, 44); // true
+// let doesntHaveIt = contains(nestedObject, "foo"); // false
+
+// var nestedObject = {
+//     data: {
+//         info: {
+//             stuff: {
+//                 thing: {
+//                     moreStuff: {
+//                         magicNumber: 44,
+//                         something: 'foo2'
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// let hasIt = contains(nestedObject, 44); // true
+// let doesntHaveIt = contains(nestedObject, "foo"); // false
+// console.log(hasIt, doesntHaveIt);
+
+// function contains(obj, value){
+// 	for(var key in obj){
+// 		if(typeof obj[key] === 'object'){
+// 			return contains(obj[key], value);
+// 		}
+
+// 		if (obj[key] === value){
+// 			return true;
+// 		}
+// 	}
+// 	return false;
+// } 
+
+
+// Given a multi-dimensional integer array, 
+
+// return the total number of integers stored inside this array
+
+// Sample:
+
+// var seven = totalIntegers([[[5], 3], 0, 2, ['foo'], [], [4, [5, 6]]]); // 7 
+
+
+// sumTo(n) 
+
+// sumTo 
+
+// takes a number 
+
+// adds all the previous numbers together 
+
+// init total var 
+
+
+// add n to total, and recursively call function, 
+
+// base case! If n == 1 return 1
+
+// function sumTo(n) { 
+//     if (n == 1) return 1;
+//     return n + sumTo(n - 1);
+// } 
+// console.log(sumTo(2));
+// console.log(sumTo(3));
+// console.log(sumTo(4)); 
+
+// factorial 
+
+// function, 
+
+// base case, if it reaches 1 return 1 
+
+// else keep recursing, 
+
+// recurisvely call the function, subtract one from n 
+
+// factorial problem 
+
+function factorial(n) { 
+    if (n == 1) { 
+        return 1;
+    }
+
+    return n * factorial(n - 1); 
+} 
+
+console.log(factorial(3));
+
+console.log(factorial(4));
+
+console.log(factorial(5)); 
+
