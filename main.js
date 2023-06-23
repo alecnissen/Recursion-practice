@@ -248,17 +248,157 @@ var nestedObject = {
 
 // factorial problem 
 
-function factorial(n) { 
-    if (n == 1) { 
-        return 1;
+// function factorial(n) { 
+//     if (n == 1) { 
+//         return 1;
+//     }
+
+//     return n * factorial(n - 1); 
+// } 
+
+// console.log(factorial(3));
+
+// console.log(factorial(4));
+
+// console.log(factorial(5));  
+
+// output a single linked list
+
+// Write a function printList(list) that outputs list items one-by-one.
+
+ 
+
+let list = {
+    value: 1,
+    next: {
+      value: 2,
+      next: {
+        value: 3,
+        next: {
+          value: 4,
+          next: null
+        }
+      }
     }
+  }; 
 
-    return n * factorial(n - 1); 
-} 
+  // go through the linked list, prints values down the list, 
 
-console.log(factorial(3));
+  // if the list reaches the next pointer and that points to null return 
 
-console.log(factorial(4));
+  // that is the base case 
 
-console.log(factorial(5)); 
+  // recurisely call the function, 
+
+  // print list in sequnetial order 
+
+//   function printList(list) { 
+    
+//     console.log(list.value);
+
+//     if (list.next) { 
+//         printList(list.next);
+//     }
+
+//   } 
+
+//   console.log(printList(list)); 
+
+// // print list in reverse order, 
+
+
+//   function printReverseList(list) {
+
+//     if (list.next) {
+//       printReverseList(list.next);
+//     }
+  
+//     console.log((list.value));
+//   }
+  
+//   console.log(printReverseList(list));
+
+
+// Write a function called power which takes in a base and an exponent.
+
+// If the exponent is 0, return 1.  
+
+// base case is the if e is 0 return 1 
+
+// what is the recursive step? 
+
+// take the b and multiple by the exponent while decrementing down, 
+
+// function power(b, e) { 
+//     if (e == 0) { 
+//         return 1;
+//     } 
+//     return b * (power(b, e - 1));
+// } 
+
+// console.log(power(2, 4)); // 16
+// console.log(power(2, 3)); // 8
+// console.log(power(2, 2)); // 4 
+// console.log(power(2, 1)); // 2
+// console.log(power(2, 0)); // 1 
+
+// web dev kyles video practice 
+// #1 
+
+// function countDownRecursive(n) { 
+//     if (n <= 0) { 
+//         console.log('Hooray');
+//         return;
+//     } 
+//     console.log(n);
+//     countDownRecursive(n - 1);
+// } 
+
+// console.log(countDownRecursive(3)); 
+
+// #2 
+
+// function sumRangeRecursive(n, total = 0) { 
+//     if (n <= 0) { 
+//         return total;
+//     } 
+
+//     return sumRangeRecursive(n - 1, total + n);
+// } 
+
+// console.log(sumRangeRecursive(3));
+// console.log(sumRangeRecursive(6)); 
+
+// #3 
+
+const tree = {
+    name: 'John',
+    children: [
+      {
+        name: 'Jim',
+        children: []
+      },
+      {
+        name: 'Zoe',
+        children: [
+          { name: 'Kyle', children: [] },
+          { name: 'Sophia', children: [] }
+        ]
+      }
+    ]
+  } 
+
+  function printChildrenRecursive(t) { 
+    if (t.children.length === 0) { 
+        return 
+    } 
+
+    t.children.forEach(child => { 
+        console.log(child.name);
+        printChildrenRecursive(child);
+    })
+  }
+
+  console.log(printChildrenRecursive(tree));
+
 
